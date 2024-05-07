@@ -1,10 +1,10 @@
 function menu() {
   return (
     <ul>
-        <li><a href="#">Notes</a></li>
-        <li><a href="#">Enseignants</a></li>
-        <li><a href="#">Étudiants</a></li>
-        <li><a href="#">Matières</a></li>
+        <li><a href="/notes">Notes</a></li>
+        <li><a href="/enseignants">Enseignants</a></li>
+        <li><a href="/etudiants">Étudiants</a></li>
+        <li><a href="/matieres">Matières</a></li>
     </ul>
   );
 }
