@@ -40,6 +40,7 @@ ul {
   list-style: none; 
   padding: 0; 
   margin: 2rem 0; 
+  text-align: center;
 }
 
 li {
@@ -63,7 +64,7 @@ a:hover {
 
 table {
   border-collapse: collapse; 
-  width: 80%; 
+  width: 100%; 
   margin: 2rem 0; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
@@ -91,7 +92,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: 3px;
+  margin-right: 3px;
 }
 
 button:nth-child(1) {

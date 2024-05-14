@@ -11,6 +11,7 @@ import Enseignants from './components/Enseignants';
 import Etudiants from './components/Etudiants';
 import Matieres from './components/Matiere';
 import Notes from './components/Note';
+import Menu from './components/navigation/menu';
 import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Menu />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
