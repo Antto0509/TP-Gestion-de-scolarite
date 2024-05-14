@@ -60,6 +60,7 @@ export default function Notes() {
                 ))}
                 </tbody>
             </table>
+            <button onClick={() => add(1, 1, 15, "2021-06-01")}>Ajouter une note</button>
         </div>
     );
 }

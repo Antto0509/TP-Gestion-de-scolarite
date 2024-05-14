@@ -56,6 +56,7 @@ export default function Matieres() {
                 ))}
                 </tbody>
             </table>
+            <button onClick={() => add("Mathématiques", 3)}>Ajouter une matière</button>
         </div>
     );
 }
