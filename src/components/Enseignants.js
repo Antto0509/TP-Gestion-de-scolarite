@@ -1,36 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { getAllEns, addEns, removeEns } from "../server/services/operationEns";
+import ModalUpdate from './navigation/modalUpdate';
+import { getEnseignants } from "../server/client/components/lstEns";
 
 function Enseignants() {
-    const [enseignants, setEnseignants] = useState([]); // État pour stocker les données des enseignants
+    const [enseignants, setEnseignants] = useState([]);
 
     useEffect(() => {
-        getEnseignants(); // Récupérer les données au montage du composant
+        getEnseignants((data) => setEnseignants(data));
     }, []);
-
-    const getEnseignants = () => {
-        getAllEns((res) => { // Fonction pour récupérer les données des enseignants
-            setEnseignants(res.data); // Mettre à jour l'état avec les données
-        });
-    };
-
-    const add = (num, nom, prenom, date) => {
-        // Fonction pour ajouter un nouvel enseignant (non implémentée)
-        let newEnseignant = {
-            NumEnseignant: num,
-            NomEnseignant: nom,
-            PrenomEnseignant: prenom,
-            DateNaissance: date,
-        };
-        addEns(newEnseignant, () => {
-            getEnseignants(); // Rafraichir la liste après l'ajout
-        });
-    };
-
-    const remove = (id, callback) => {
-        // Fonction pour supprimer un enseignant (non implémentée)
-        removeEns(id, callback);
-    };
 
     return (
         <div>
@@ -53,8 +30,8 @@ function Enseignants() {
                             <td>{enseignant.GradeEns}</td>
                             <td>{enseignant.CodeMat}</td>
                             <td>
-                                <button>Modifier</button>
-                                <button onClick={() => remove(enseignant._id, getEnseignants)}>
+                                <ModalUpdate type="enseignants" data={enseignant} />
+                                <button>
                                     Supprimer
                                 </button>
                             </td>
@@ -62,7 +39,7 @@ function Enseignants() {
                     ))}
                 </tbody>
             </table>
-            <button onClick={() => add('...', '...', '...', '...')}>Ajouter</button>
+            <button>Ajouter</button>
         </div>
     );
 }

@@ -1,37 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { getAllEtuds, addEtud, removeEtud } from '../server/services/operationEtuds';
+import ModalUpdate from './navigation/modalUpdate';
+import { getEtudiants } from '../server/client/components/lstEtuds';
 
 function Etudiants() {
-  const [etudiants, setEtudiants] = useState([]); // État pour stocker les données des étudiants
+  const [etudiants, setEtudiants] = useState([]);
 
   useEffect(() => {
-    getEtudiants(); // Récupérer les données au montage du composant
+    getEtudiants((data) => setEtudiants(data));
   }, []);
-
-  const getEtudiants = () => {
-    getAllEtuds((res) => { // Fonction pour récupérer les données des étudiants
-      setEtudiants(res.data); // Mettre à jour l'état avec les données
-    });
-  };
-
-  const add = (num, nom, prenom, date) => {
-    // Fonction pour ajouter un nouvel étudiant (non implémentée)
-    let newEtud = {
-      NumEtudiant: num,
-      NomEtudiant: nom,
-      PrenomEtudiant: prenom,
-      DatenET: date,
-    };
-    addEtud(newEtud, () => {
-      getEtudiants(); // Rafraichir la liste après l'ajout
-    });
-  };
-
-  const remove = (id, callback) => {
-    // Fonction pour supprimer un étudiant (non implémentée)
-    removeEtud(id, callback);
-  };
-
+  
   return (
     <div>
         <h1>Liste des étudiants</h1>
@@ -51,16 +28,16 @@ function Etudiants() {
                 <td>{etudiant.Prenom}</td>
                 <td>{etudiant.DatenET}</td>
                 <td>
-                    <button>Modifier</button>
-                    <button onClick={() => remove(etudiant._id, getEtudiants)}>
+                    <ModalUpdate type="etudiants" data={etudiant} />
+                    <button>
                         Supprimer
                     </button>
                 </td>
-                </tr>
+              </tr>
             ))}
             </tbody>
         </table>
-        <button onClick={() => add('...', '...', '...', '...')}>Ajouter</button>
+        <button>Ajouter</button>
     </div>
   );
 }

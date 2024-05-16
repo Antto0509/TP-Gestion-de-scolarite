@@ -108,3 +108,21 @@ button:nth-child(1):hover {
 button:nth-child(2):hover { 
   background-color: rgb(129, 1, 1);
 }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.modal-content {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

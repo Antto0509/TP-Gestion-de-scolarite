@@ -1,34 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { getAllMat, addMat, removeMat } from "../server/services/operationMat";
+import ModalUpdate from './navigation/modalUpdate';
+import { getMatieres } from "../server/client/components/lstMat";
 
 export default function Matieres() {
-    const [matieres, setMatieres] = useState([]); // État pour stocker les données des matières
-    
+    const [matieres, setMatieres] = useState([]);
+
     useEffect(() => {
-        getMatieres(); // Récupérer les données au montage du composant
+        getMatieres((data) => setMatieres(data));
     }, []);
-    
-    const getMatieres = () => {
-        getAllMat((res) => { // Fonction pour récupérer les données des matières
-        setMatieres(res.data); // Mettre à jour l'état avec les données
-        });
-    };
-    
-    const add = (nom, coef) => {
-        // Fonction pour ajouter une nouvelle matière (non implémentée)
-        let newMat = {
-        NomMatiere: nom,
-        CoefMatiere: coef,
-        };
-        addMat(newMat, () => {
-        getMatieres(); // Rafraichir la liste après l'ajout
-        });
-    };
-    
-    const remove = (id, callback) => {
-        // Fonction pour supprimer une matière (non implémentée)
-        removeMat(id, callback);
-    };
     
     return (
         <div>
@@ -47,8 +26,8 @@ export default function Matieres() {
                     <td>{matiere.LibelleMat}</td>
                     <td>{matiere.CoefMat}</td>
                     <td>
-                        <button>Modifier</button>
-                        <button onClick={() => remove(matiere._id, getMatieres)}>
+                        <ModalUpdate type="matieres" data={matiere} />
+                        <button>
                             Supprimer
                         </button>
                     </td>
@@ -56,7 +35,7 @@ export default function Matieres() {
                 ))}
                 </tbody>
             </table>
-            <button onClick={() => add("Mathématiques", 3)}>Ajouter une matière</button>
+            <button>Ajouter une matière</button>
         </div>
     );
 }
