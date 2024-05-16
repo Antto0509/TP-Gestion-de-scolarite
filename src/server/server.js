@@ -54,7 +54,7 @@ const NoteSchema = new Schema({
   NumEtudiant: { type: String, required: true },
   CodeMat: { type: Number, required: true },
   Note: { type: Number, required: true },
-  Date: { type: Date, required: true },
+  Date: { type: String, required: true },
 }, { versionKey: false });
 
 // Création des modèles Mongoose
