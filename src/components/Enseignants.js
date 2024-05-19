@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ModalUpdate from './navigation/modalUpdate';
+import Modal from './navigation/modal';
 import { getEnseignants } from "../server/client/components/lstEns";
 
 function Enseignants() {
@@ -12,6 +12,7 @@ function Enseignants() {
     return (
         <div>
             <h1>Liste des enseignants</h1>
+            <Modal type="add" table="enseignants" />
             <table>
                 <tbody>
                     <tr>
@@ -30,16 +31,13 @@ function Enseignants() {
                             <td>{enseignant.GradeEns}</td>
                             <td>{enseignant.CodeMat}</td>
                             <td>
-                                <ModalUpdate type="enseignants" data={enseignant} />
-                                <button>
-                                    Supprimer
-                                </button>
+                                <Modal type="update" table="enseignants" data={enseignant} />
+                                <Modal type="delete" table="enseignants" data={enseignant} />
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <button>Ajouter</button>
         </div>
     );
 }

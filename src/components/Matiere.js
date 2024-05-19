@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ModalUpdate from './navigation/modalUpdate';
+import Modal from './navigation/modal';
 import { getMatieres } from "../server/client/components/lstMat";
 
 export default function Matieres() {
@@ -12,6 +12,7 @@ export default function Matieres() {
     return (
         <div>
             <h1>Liste des matières</h1>
+            <Modal type="add" table="matieres" />
             <table>
                 <tbody>
                 <tr>
@@ -26,16 +27,13 @@ export default function Matieres() {
                     <td>{matiere.LibelleMat}</td>
                     <td>{matiere.CoefMat}</td>
                     <td>
-                        <ModalUpdate type="matieres" data={matiere} />
-                        <button>
-                            Supprimer
-                        </button>
+                        <Modal type="update" table="matieres" data={matiere} />
+                        <Modal type="delete" table="matieres" data={matiere} />
                     </td>
                 </tr>
                 ))}
                 </tbody>
             </table>
-            <button>Ajouter une matière</button>
         </div>
     );
 }

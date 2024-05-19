@@ -1,18 +1,7 @@
 body {
   margin: 50px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -21,6 +10,11 @@ body {
   align-items: center; 
   justify-content: center; 
   min-height: 100vh; 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 h1 {
@@ -85,7 +79,6 @@ tr:nth-child(odd) {
 }
 
 button {
-  background-color: #007bff;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -95,34 +88,80 @@ button {
   margin-right: 3px;
 }
 
-button:nth-child(1) {
+.btn-ajouter{
+  background-color: #007bff;
+}
+.btn-modifier {
   background-color: #0056b3;
 }
-button:nth-child(2) { 
+.btn-supprimer { 
   background-color: rgb(179, 0, 0);
 }
 
-button:nth-child(1):hover {
+.btn-modifier:hover {
   background-color: #02366e;
 }
-button:nth-child(2):hover { 
+.btn-supprimer:hover { 
   background-color: rgb(129, 1, 1);
 }
 
 .modal {
-  position: fixed;
+  position: fixed; /* Position absolute relative to the viewport */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
+  transform: translate(-50%, -50%); /* Offset to center the modal */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  display: flex; /* Allow vertical stacking of modal content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  z-index: 1000; /* Ensure modal appears above other elements */
+  padding: 20px; /* Add some padding for better readability */
+  border-radius: 5px; /* Add rounded corners for aesthetics */
 }
 
 .modal-content {
-  display: block;
-  margin: 0 auto;
-  max-width: 500px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: white; /* Set background color for modal content */
+  width: fit-content; /* Allow content to adjust based on elements */
+  max-width: 500px; /* Set a maximum width for responsiveness */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 5px; /* Inherit rounded corners from modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.close-button {
+  position: absolute; /* Position close button in top right corner */
+  top: 10px;
+  right: 10px;
+  font-size: 20px; /* Adjust font size for better visibility */
+  cursor: pointer; /* Indicate clickable element */
+}
+
+h2 {
+  margin-bottom: 15px; /* Add some space below the heading */
+}
+
+label {
+  display: block; /* Display labels on separate lines */
+  margin-bottom: 5px; /* Add some space below labels */
+}
+
+input[type="text"] {
+  width: 92%; /* Set input width to fill available space */
+  padding: 10px; /* Add padding for better user experience */
+  border: 1px solid #ccc; /* Add a thin border */
+  border-radius: 3px; /* Add slightly rounded corners */
+}
+
+.btn-enregistrer, .btn-fermer {
+  margin-top: 10px; /* Add some space above buttons */
+  padding: 10px 20px; /* Add padding for better click area */
+  border: none; /* Remove default button border */
+  border-radius: 3px; /* Add slightly rounded corners */
+  background-color: #007bff; /* Set button background color */
+  color: white; /* Set button text color */
+  cursor: pointer; /* Indicate clickable element */
+}
+
+.btn-enregistrer:hover, .btn-fermer:hover {
+  background-color: #0069d9; /* Change button color on hover */
 }

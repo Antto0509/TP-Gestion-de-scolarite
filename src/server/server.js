@@ -17,7 +17,7 @@ app.listen(port, () => {
 
 // Connexion à la base de données MongoDB
 const mongoose = require('mongoose');
-const uriCompass = "mongodb://127.0.0.1:27017/mon-universiteDB";
+const uriCompass = "mongodb://localhost:27017/mon-universiteDB";
 mongoose.connect(uriCompass)
   .then(() => console.log("Connexion à la base de données réussie"))
   .catch(err => console.error(err));

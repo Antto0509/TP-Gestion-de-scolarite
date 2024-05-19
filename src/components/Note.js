@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ModalUpdate from './navigation/modalUpdate';
+import Modal from './navigation/modal';
 import { getNotes } from "../server/client/components/lstNotes";
 
 export default function Notes() {
@@ -12,6 +12,7 @@ export default function Notes() {
     return (
         <div>
             <h1>Liste des notes</h1>
+            <Modal type="add" table="notes" />
             <table>
                 <tbody>
                 <tr>
@@ -28,16 +29,13 @@ export default function Notes() {
                     <td>{note.Note}</td>
                     <td>{note.Date}</td>
                     <td>
-                        <ModalUpdate type="notes" data={note} />
-                        <button>
-                            Supprimer
-                        </button>
+                        <Modal type="update" table="notes" data={note} />
+                        <Modal type="delete" table="notes" data={note} />
                     </td>
                 </tr>
                 ))}
                 </tbody>
             </table>
-            <button>Ajouter une note</button>
         </div>
     );
 }
