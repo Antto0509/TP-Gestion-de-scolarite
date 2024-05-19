@@ -22,7 +22,7 @@ export default function Matieres() {
                     <th>Actions</th>
                 </tr>
                 {matieres.map((matiere) => (
-                <tr key={matiere._id}>
+                <tr key={matiere.CodeMat}>
                     <td>{matiere.CodeMat}</td>
                     <td>{matiere.LibelleMat}</td>
                     <td>{matiere.CoefMat}</td>

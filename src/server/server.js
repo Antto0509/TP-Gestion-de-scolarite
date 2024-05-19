@@ -17,8 +17,9 @@ app.listen(port, () => {
 
 // Connexion à la base de données MongoDB
 const mongoose = require('mongoose');
-const uriCompass = "mongodb://localhost:27017/mon-universiteDB";
-mongoose.connect(uriCompass)
+// const uriCompass = "mongodb://localhost:27017/mon-universiteDB";
+const uriAtlas = "mongodb+srv://coutreelantoine:gYkw6rtoH3zBJOSK@antto.17vuawu.mongodb.net/mon-universiteDB?retryWrites=true&w=majority&appName=Antto";
+mongoose.connect(uriAtlas)
   .then(() => console.log("Connexion à la base de données réussie"))
   .catch(err => console.error(err));
 
@@ -26,7 +27,6 @@ mongoose.connect(uriCompass)
 const Schema = mongoose.Schema;
 
 const EtudSchema = new Schema({
-  _id: { type: String, required: true },
   NumEtudiant: { type: String, required: true },
   Nom: { type: String, required: true },
   Prenom: { type: String, required: true },
@@ -34,7 +34,6 @@ const EtudSchema = new Schema({
 }, { versionKey: false });
 
 const EnsSchema = new Schema({
-  _id: { type: String, required: true },
   CodeEns: { type: Number, required: true },
   NomEns: { type: String, required: true },
   PrenomEns: { type: String, required: true },
@@ -43,14 +42,12 @@ const EnsSchema = new Schema({
 }, { versionKey: false });
 
 const MatSchema = new Schema({
-  _id: { type: String, required: true },
   CodeMat: { type: Number, required: true },
   LibelleMat: { type: String, required: true },
   CoefMat: { type: Number, required: true },
 }, { versionKey: false });
 
 const NoteSchema = new Schema({
-  _id: { type: String, required: true },
   NumEtudiant: { type: String, required: true },
   CodeMat: { type: Number, required: true },
   Note: { type: Number, required: true },

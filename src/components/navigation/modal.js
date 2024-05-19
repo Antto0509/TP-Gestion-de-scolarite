@@ -32,8 +32,7 @@ export default function Modal({ data, table, type }) {
           {table === 'etudiants' && type === "update" && (
             <>
               <h2>Informations sur l'étudiant</h2>
-              <label htmlFor="numEtudiant">Numéro étudiant</label>
-              <input type="text" id="numEtudiant" defaultValue={data.NumEtudiant} />
+              <input type="hidden" id="numEtudiant" defaultValue={data.NumEtudiant} />
               <label htmlFor="nom">Nom</label>
               <input type="text" id="nom" defaultValue={data.Nom} />
               <label htmlFor="prenom">Prénom</label>
@@ -63,15 +62,14 @@ export default function Modal({ data, table, type }) {
             <>
               <h2>Supprimer l'étudiant</h2>
               <p>Êtes-vous sûr de vouloir supprimer cet étudiant ?</p>
-              <button class="btn-supprimer" onClick={() => removeEtudiant(data._id, closeModal)}>Supprimer</button>
+              <button class="btn-supprimer" onClick={() => removeEtudiant(data.NumEtudiant, closeModal)}>Supprimer</button>
             </>
           )}
 
           {table === 'enseignants' && type === "update" && (
             <>
               <h2>Informations sur l'enseignant</h2>
-              <label htmlFor="numEnseignant">Code enseignant</label>
-              <input type="text" id="codeEnseignant" defaultValue={data.CodeEns} />
+              <input type="hidden" id="codeEnseignant" defaultValue={data.CodeEns} />
               <label htmlFor="nom">Nom</label>
               <input type="text" id="nom" defaultValue={data.NomEns} />
               <label htmlFor="prenom">Prénom</label>
@@ -105,15 +103,14 @@ export default function Modal({ data, table, type }) {
             <>
               <h2>Supprimer l'enseignant</h2>
               <p>Êtes-vous sûr de vouloir supprimer cet enseignant ?</p>
-              <button class="btn-supprimer" onClick={() => removeEnseignant(data._id, closeModal)}>Supprimer</button>
+              <button class="btn-supprimer" onClick={() => removeEnseignant(data.CodeEns, closeModal)}>Supprimer</button>
             </>
           )}
 
           {table === 'matieres' && type === "update" && (
             <>
               <h2>Informations sur la matière</h2>
-              <label htmlFor="codeMatiere">Code matière</label>
-              <input type="text" id="codeMatiere" defaultValue={data.CodeMat} />
+              <input type="hidden" id="codeMatiere" defaultValue={data.CodeMat} />
               <label htmlFor="libelle">Libellé</label>
               <input type="text" id="libelle" defaultValue={data.LibelleMat} />
               <label htmlFor="coef">Coefficient</label>
@@ -139,17 +136,15 @@ export default function Modal({ data, table, type }) {
             <>
               <h2>Supprimer la matière</h2>
               <p>Êtes-vous sûr de vouloir supprimer cette matière ?</p>
-              <button class="btn-supprimer" onClick={() => removeMatiere(data._id, closeModal)}>Supprimer</button>
+              <button class="btn-supprimer" onClick={() => removeMatiere(data.CodeEns, closeModal)}>Supprimer</button>
             </>
           )}
 
           {table === 'notes' && type === "update" && (
             <>
               <h2>Informations sur la note</h2>
-              <label htmlFor="numEtudiant">Numéro étudiant</label>
-              <input type="text" id="numEtudiant" defaultValue={data.NumEtudiant} />
-              <label htmlFor="codeMatiere">Code matière</label>
-              <input type="text" id="codeMatiere" defaultValue={data.CodeMat} />
+              <input type="hidden" id="numEtudiant" defaultValue={data.NumEtudiant} />
+              <input type="hidden" id="codeMatiere" defaultValue={data.CodeMat} />
               <label htmlFor="note">Note</label>
               <input type="text" id="note" defaultValue={data.Note} />
               <label htmlFor="date">Date</label>
@@ -177,7 +172,7 @@ export default function Modal({ data, table, type }) {
             <>
               <h2>Supprimer la note</h2>
               <p>Êtes-vous sûr de vouloir supprimer cette note ?</p>
-              <button class="btn-supprimer" onClick={() => removeNote_(data._id, closeModal)}>Supprimer</button>
+              <button class="btn-supprimer" onClick={() => removeNote_(data.NumEtudiant, data.CodeMat, closeModal)}>Supprimer</button>
             </>
           )}
 

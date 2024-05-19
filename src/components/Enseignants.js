@@ -24,7 +24,7 @@ function Enseignants() {
                         <th>Actions</th>
                     </tr>
                     {enseignants.map((enseignant) => (
-                        <tr key={enseignant._id}>
+                        <tr key={enseignant.CodeEns}>
                             <td>{enseignant.CodeEns}</td>
                             <td>{enseignant.NomEns}</td>
                             <td>{enseignant.PrenomEns}</td>

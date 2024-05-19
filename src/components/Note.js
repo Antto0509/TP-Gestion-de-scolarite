@@ -8,6 +8,8 @@ export default function Notes() {
     useEffect(() => {
         getNotes((data) => setNotes(data));
     }, []);
+
+    let i = 0;
     
     return (
         <div>
@@ -23,7 +25,7 @@ export default function Notes() {
                     <th>Actions</th>
                 </tr>
                 {notes.map((note) => (
-                <tr key={note._id}>
+                <tr key={i++}>
                     <td>{note.NumEtudiant}</td>
                     <td>{note.CodeMat}</td>
                     <td>{note.Note}</td>

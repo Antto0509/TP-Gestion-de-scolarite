@@ -23,7 +23,7 @@ function Etudiants() {
                 <th>Actions</th>
             </tr>
             {etudiants.map((etudiant) => (
-            <tr key={etudiant._id}>
+            <tr key={etudiant.NumEtudiant}>
                 <td>{etudiant.NumEtudiant}</td>
                 <td>{etudiant.Nom}</td>
                 <td>{etudiant.Prenom}</td>
