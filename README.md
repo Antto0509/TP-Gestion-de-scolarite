@@ -1,21 +1,19 @@
 # Mon Université
 
-Ce projet vise à créer une application web pour gérer les activités et les ressources d'une université. L'application permettra aux étudiants de s'inscrire à des cours, de consulter leur emploi du temps, de soumettre des devoirs, de communiquer avec les enseignants, et bien plus encore.
+Ce projet vise à créer une application web pour gérer les activités et les ressources d'une université. L'application permettra d'ajouter des étudiants, des enseignats, des matières et des notes. De plus, ils pourront être modifier et supprimer.
 
 ## Fonctionnalités
 
-- Inscription aux cours en ligne
-- Consultation de l'emploi du temps
-- Soumission des devoirs en ligne
-- Communication avec les enseignants via une messagerie intégrée
-- Gestion des ressources universitaires (bibliothèque, laboratoires, etc.)
-- Suivi des notes et des résultats scolaires
+- Ajouter des étudiants, des enseignats, des matières et des notes.
+- Modifier des étudiants, des enseignats, des matières et des notes.
+- Supprimer des étudiants, des enseignats, des matières et des notes.
 
 ## Technologies utilisées
 
 - Front-end : HTML, CSS, JavaScript
 - Back-end : Node.js, Express.js
 - Base de données : MongoDB
+- Framework : React
 
 ## Installation
 
