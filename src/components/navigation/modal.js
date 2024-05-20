@@ -78,7 +78,7 @@ export default function Modal({ data, table, type }) {
               <input type="text" id="grade" defaultValue={data.GradeEns} />
               <label htmlFor="codeMat">Code matière</label>
               <input type="text" id="codeMat" defaultValue={data.CodeMat} />
-              <button class="btn-enregistrer"onClick={() => updateEnseignant(document.getElementById('codeEnseignant').value, document.getElementById('nom').value, document.getElementById('prenom').value, document.getElementById('grade').value, document.getElementById('codeMat').value, closeModal)}>Enregistrer</button>
+              <button class="btn-enregistrer" onClick={() => updateEnseignant(document.getElementById('codeEnseignant').value, document.getElementById('nom').value, document.getElementById('prenom').value, document.getElementById('grade').value, document.getElementById('codeMat').value, closeModal)}>Enregistrer</button>
             </>
           )}
 
@@ -136,7 +136,7 @@ export default function Modal({ data, table, type }) {
             <>
               <h2>Supprimer la matière</h2>
               <p>Êtes-vous sûr de vouloir supprimer cette matière ?</p>
-              <button class="btn-supprimer" onClick={() => removeMatiere(data.CodeEns, closeModal)}>Supprimer</button>
+              <button class="btn-supprimer" onClick={() => removeMatiere(data.CodeMat, closeModal)}>Supprimer</button>
             </>
           )}
 

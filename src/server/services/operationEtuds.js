@@ -16,7 +16,7 @@ export const addEtud = (etud, callback)=>{
 
 // Fonction qui permet de modifier un étudiant
 export const updateEtud = (etud, callback)=>{
-    axios.put('http://localhost:4000/etudiants', etud).then((res) => 
+    axios.put(`http://localhost:4000/etudiants?NumEtudiant=${etud.NumEtudiant}`, etud).then((res) => 
         callback(res)).catch((err)=> 
             callback(err));
 }

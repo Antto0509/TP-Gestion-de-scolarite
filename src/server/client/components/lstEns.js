@@ -12,22 +12,24 @@ export const componentDidMount = () => {
     });
 }
 
-export const addEnseignant = (code, nom, prenom, date, callback) => {
+export const addEnseignant = (code, nom, prenom, grade, mat, callback) => {
     let newEns = {
         CodeEns: code,
-        Nom: nom,
-        Prenom: prenom,
-        DateNais: date,
+        NomEns: nom,
+        PrenomEns: prenom,
+        GradeEns: grade,
+        CodeMat: mat,
     };
     addEns(newEns, callback);
 }
 
-export const updateEnseignant = (code, nom, prenom, date, callback) => {
+export const updateEnseignant = (code, nom, prenom, grade, mat, callback) => {
     let newEns = {
         CodeEns: code,
-        Nom: nom,
-        Prenom: prenom,
-        DateNais: date,
+        NomEns: nom,
+        PrenomEns: prenom,
+        GradeEns: grade,
+        CodeMat: mat,
     };
     updateEns(newEns, callback);
 }

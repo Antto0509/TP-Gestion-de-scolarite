@@ -15,7 +15,7 @@ export const addNote = (note, callback)=>{
 
 // Fonction qui permet de modifier une note
 export const updateNote = (note, callback)=>{
-    axios.put('http://localhost:4000/notes', note).then((res) => 
+    axios.put(`http://localhost:4000/notes?NumEtudiant=${note.NumEtudiant}&CodeMat=${note.CodeMat}`, note).then((res) => 
         callback(res)).catch((err)=> 
             callback(err));
 }

@@ -15,7 +15,7 @@ export const addMat = (mat, callback)=>{
 
 // Fonction qui permet de modifier une matière
 export const updateMat = (mat, callback)=>{
-    axios.put('http://localhost:4000/matieres', mat).then((res) => 
+    axios.put(`http://localhost:4000/matieres?CodeMat=${mat.CodeMat}`, mat).then((res) => 
         callback(res)).catch((err)=> 
             callback(err));
 }
