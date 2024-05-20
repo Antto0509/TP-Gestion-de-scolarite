@@ -3,6 +3,7 @@ function menu() {
     <header>
       <nav>
         <ul>
+          <a href="/"><img src="logo.png" alt="Logo de l'IUT d'Amiens" className="logo" /></a>
           <li>
             <a href="/" className="active">Accueil</a>
           </li>
