@@ -10,7 +10,7 @@ export default function Matieres() {
     }, []);
     
     return (
-        <div>
+        <div className="container">
             <h1>Liste des matières</h1>
             <Modal type="add" table="matieres" />
             <table>

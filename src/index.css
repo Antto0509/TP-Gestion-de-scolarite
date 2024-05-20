@@ -1,84 +1,7 @@
-body {
-  margin: 50px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  min-height: 100vh; 
-}
+/* Boutons */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-h1 {
-  text-align: center; 
-  font-size: 3rem; 
-  color: #333; 
-}
-
-p {
-  text-align: center; 
-  font-size: 1.2rem; 
-  color: #666; 
-  margin-top: 1rem; 
-}
-
-ul {
-  list-style: none; 
-  padding: 0; 
-  margin: 2rem 0; 
-  text-align: center;
-}
-
-li {
-  display: inline-block; 
-  margin-right: 2rem; 
-}
-
-a {
-  text-decoration: none; 
-  color: #007bff; 
-  font-weight: bold; 
-  padding: 0.5rem 1rem; 
-  border: 1px solid #007bff; 
-  border-radius: 5px; 
-  transition: background-color 0.3s ease; 
-}
-
-a:hover { 
-  background-color: #0056b3; 
-}
-
-table {
-  border-collapse: collapse; 
-  width: 100%; 
-  margin: 2rem 0; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-}
-
-th, td {
-  padding: 1rem; 
-  text-align: left; 
-  border-bottom: 1px solid #ddd; 
-}
-
-th {
-  background-color: #e8e8e8; 
-  font-weight: bold; 
-}
-
-tr:nth-child(odd) { 
-  background-color: #f9f9f9;
-}
-
-button {
+.btn-ajouter, .btn-enregistrer, .btn-fermer {
+  background-color: #007bff;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -88,80 +11,205 @@ button {
   margin-right: 3px;
 }
 
-.btn-ajouter{
-  background-color: #007bff;
-}
-.btn-modifier {
+.btn-ajouter:hover , .btn-enregistrer:hover, .btn-fermer:hover {
   background-color: #0056b3;
 }
-.btn-supprimer { 
-  background-color: rgb(179, 0, 0);
+
+.btn-modifier {
+  background-color: #0056b3;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 3px;
 }
 
 .btn-modifier:hover {
   background-color: #02366e;
 }
-.btn-supprimer:hover { 
+
+.btn-supprimer {
+  background-color: rgb(179, 0, 0);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 3px;
+}
+
+.btn-supprimer:hover {
   background-color: rgb(129, 1, 1);
 }
 
+/* Boite modale */
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .modal {
-  position: fixed; /* Position absolute relative to the viewport */
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Offset to center the modal */
-  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
-  display: flex; /* Allow vertical stacking of modal content */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  z-index: 1000; /* Ensure modal appears above other elements */
-  padding: 20px; /* Add some padding for better readability */
-  border-radius: 5px; /* Add rounded corners for aesthetics */
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .modal-content {
-  background-color: white; /* Set background color for modal content */
-  width: fit-content; /* Allow content to adjust based on elements */
-  max-width: 500px; /* Set a maximum width for responsiveness */
-  padding: 20px; /* Add padding for better spacing */
-  border-radius: 5px; /* Inherit rounded corners from modal */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  background-color: white;
+  width: fit-content;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.close-button {
-  position: absolute; /* Position close button in top right corner */
-  top: 10px;
-  right: 10px;
-  font-size: 20px; /* Adjust font size for better visibility */
-  cursor: pointer; /* Indicate clickable element */
+/* Eléments de la page */
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #007bff;
+}
+
+.active {
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.active:hover {
+  color: white;
+  background-color: #0056b3;
+  border: 1px solid #0056b3;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #333;
 }
 
 h2 {
-  margin-bottom: 15px; /* Add some space below the heading */
+  margin-bottom: 15px;
 }
 
-label {
-  display: block; /* Display labels on separate lines */
-  margin-bottom: 5px; /* Add some space below labels */
+header {
+  background-color: #f0f0f0;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
 }
 
 input[type="text"] {
-  width: 92%; /* Set input width to fill available space */
-  padding: 10px; /* Add padding for better user experience */
-  border: 1px solid #ccc; /* Add a thin border */
-  border-radius: 3px; /* Add slightly rounded corners */
+  width: 92%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
 }
 
-.btn-enregistrer, .btn-fermer {
-  margin-top: 10px; /* Add some space above buttons */
-  padding: 10px 20px; /* Add padding for better click area */
-  border: none; /* Remove default button border */
-  border-radius: 3px; /* Add slightly rounded corners */
-  background-color: #007bff; /* Set button background color */
-  color: white; /* Set button text color */
-  cursor: pointer; /* Indicate clickable element */
+label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-.btn-enregistrer:hover, .btn-fermer:hover {
-  background-color: #0069d9; /* Change button color on hover */
+li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  li {
+    margin-right: 0;
+  }
+}
+
+nav {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #e8e8e8;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(odd) { 
+  background-color: #f9f9f9;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

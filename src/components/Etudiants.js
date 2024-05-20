@@ -10,7 +10,7 @@ function Etudiants() {
   }, []);
   
   return (
-    <div>
+    <div className="container">
         <h1>Liste des étudiants</h1>
         <Modal type="add" table="etudiants" />
         <table>

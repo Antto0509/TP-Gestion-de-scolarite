@@ -12,7 +12,7 @@ export default function Notes() {
     let i = 0;
     
     return (
-        <div>
+        <div className="container">
             <h1>Liste des notes</h1>
             <Modal type="add" table="notes" />
             <table>

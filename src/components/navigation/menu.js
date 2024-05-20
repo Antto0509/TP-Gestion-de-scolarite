@@ -4,7 +4,7 @@ function menu() {
       <nav>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/" className="active">Accueil</a>
           </li>
           <li>
             <a href="/etudiants">Etudiants</a>
