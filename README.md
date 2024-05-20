@@ -4,9 +4,9 @@ Ce projet vise à créer une application web pour gérer les activités et les r
 
 ## Fonctionnalités
 
-- Ajouter des étudiants, des enseignats, des matières et des notes.
-- Modifier des étudiants, des enseignats, des matières et des notes.
-- Supprimer des étudiants, des enseignats, des matières et des notes.
+- Ajouter des étudiants, des enseignants, des matières et des notes.
+- Modifier des étudiants, des enseignants, des matières et des notes.
+- Supprimer des étudiants, des enseignants, des matières et des notes.
 
 ## Technologies utilisées
 
